@@ -1,0 +1,33 @@
+# System
+alias c="clear"
+alias ls="ls --color=auto -h"
+alias ll="ls -l"
+alias la="ls -la"
+alias rm="rm -i"
+alias cp="cp -iv"
+alias mv="mv -i"
+alias du="du -h"
+alias sudo="sudo "
+alias sctl="systemctl"
+alias pc="pacman"
+
+# Git
+git config --global alias.st status
+git config --global alias.l log
+git config --global alias.lo "log --oneline"
+git config --global alias.ch checkout
+git config --global alias.br branch
+git config --global alias.co commit
+
+# ytdl
+alias ytdl="youtube-dl --add-metadata"
+alias ytdla="yt-dlp --format worstaudio --add-metadata -o \"%(artist)s - %(title)s.%(ext)s\""
+alias ytdlp="yt-dlp"
+
+# Other
+alias vi="nvim"
+alias news="newsboat"
+alias vinews="nvim ~/.config/newsboat/urls"
+alias dotfiles="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+alias lf="lfcd"
+alias r="ranger"
