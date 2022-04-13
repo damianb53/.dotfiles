@@ -1,0 +1,82 @@
+# Reload
+auto-reload yes
+reload-time 180
+
+# killfiles/filters
+ignore-mode "display"
+ignore-article "*" "title =~ \"Hermitcraft\""
+
+# Watch youtube videos in mpv
+browser "xdg-open %u"
+macro m set browser "mpv --ytdl-format=bestvideo+bestaudio %u"; open-in-browser ; set browser "xdg-open %u"
+
+# Make the text width readable
+text-width 50
+
+# Use multiple threads to download all the news faster.
+reload-threads 50
+
+# Hide feeds where all the iteams are read
+show-read-feeds	yes
+
+# Highlights
+highlight article "^(Title):.*$" blue default
+highlight article "https?://[^ ]+" red default
+highlight article "\\[image\\ [0-9]+\\]" green default
+# Separators
+highlight feedlist "---.*---" green black bold
+highlight feedlist "--- Twitter ---" blue black bold
+highlight feedlist "^.*\\(0/0\\)" black black
+
+# Other
+feed-sort-order none
+#feed-sort-order firsttag
+text-width 60
+confirm-exit no
+
+# Colors
+color background	default	default	
+color listnormal	default	default
+color listnormal_unread	default	default
+color listfocus		black	cyan
+color listfocus_unread	black	cyan
+color info		default	black
+color article		default	default
+
+# Unbind keys
+unbind-key ENTER
+unbind-key j
+unbind-key k
+unbind-key J
+unbind-key K
+unbind-key ^D
+unbind-key ^U
+unbind-key o
+unbind-key g
+unbind-key G
+
+# Bind keys - vim style
+bind-key j down
+bind-key k up
+bind-key l open
+bind-key h quit
+bind-key ^D pagedown
+bind-key ^U pageup
+bind-key b toggle-source-view
+bind-key U toggle-show-read-feeds
+bind-key u show-urls
+bind-key g home
+bind-key G end
+bind-key b open-in-browser-and-mark-read
+bind-key B open-in-browser
+bind-key i sort
+bind-key I rev-sort
+
+# Macros
+browser "/usr/bin/w3m %u"
+#macro m set browser "/usr/bin/mpv --ytdl-format=best %u" ; open-in-browser ; set browser "/usr/bin/w3m %u"
+macro y set browser "/usr/bin/pipe-viewer %u" ; open-in-browser ; set browser "/usr/bin/w3m %u"
+#macro M set browser "/usr/bin/mpv -fs --ytdl-format=best %u" ; open-in-browser ; set browser "/usr/bin/w3m %u"
+macro p set browser "/usr/bin/mpv %u" ; open-in-browser ; set browser "/usr/bin/w3m %u"
+macro l set browser "/usr/bin/librewolf %u" ; open-in-browser ; set browser "/usr/bin/w3m %u"
+macro d set browser "/usr/bin/youtube-dl %u" ; open-in-browser ; set browser "/usr/bin/w3m %u"
