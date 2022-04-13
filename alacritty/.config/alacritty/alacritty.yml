@@ -1,0 +1,13 @@
+window:
+  opacity: 0.9
+  padding:
+    x: 15
+    y: 15
+    dynamic_padding: true
+font:
+  normal:
+    family: Jetbrains Mono
+    ligatures: true
+    
+  size: 14
+    #background_opacity: 0.95
