@@ -1,6 +1,6 @@
 # System
 alias c="clear"
-alias ls="ls --color=auto -h"
+alias ls="ls --color=auto -h --ignore=lost+found"
 alias ll="ls -l"
 alias la="ls -la"
 alias rm="rm -i"
@@ -10,6 +10,7 @@ alias du="du -h"
 alias sudo="sudo "
 alias sctl="systemctl"
 alias pc="pacman"
+alias suspend="systemctl suspend"
 
 # Git
 git config --global alias.st status
@@ -18,11 +19,12 @@ git config --global alias.lo "log --oneline"
 git config --global alias.ch checkout
 git config --global alias.br branch
 git config --global alias.co commit
+git config --global alias.sm submodule
 
-# ytdl
-alias ytdl="youtube-dl --add-metadata"
-alias ytdla="yt-dlp --format worstaudio --add-metadata -o \"%(artist)s - %(title)s.%(ext)s\""
-alias ytdlp="yt-dlp"
+# Youtube
+alias yt="pipe-viewer"
+alias ytdl="yt-dlp --sponsorblock-remove all --embed-metadata --embed-subs --embed-thumbnail --download-archive .ytdlp_archive.txt"
+alias ytdla="yt-dlp --sponsorblock-remove all --embed-metadata --format worstaudio --download-archive .ytdlp_archive.txt -o \"%(artist)s; %(title)s.%(ext)s\""
 
 # Other
 alias vi="nvim"
@@ -31,3 +33,4 @@ alias vinews="nvim ~/.config/newsboat/urls"
 alias dotfiles="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 alias lf="lfcd"
 alias r="ranger"
+alias sxiv="nsxiv"
